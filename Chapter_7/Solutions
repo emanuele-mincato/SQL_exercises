@@ -1,0 +1,8 @@
+-- Exercise 7.1
+SELECT SUBSTRING('Please find the substring in this string', 17, 9) AS ExtractString;
+
+-- Exercise 7.2
+SELECT ABS(-25.76823) AS Abs_value, SIGN(-25.76823) AS Sign, ROUND(-25.76823,2) AS Round_value;
+
+-- Exercise 7.3 
+SELECT MONTH(CURDATE());
