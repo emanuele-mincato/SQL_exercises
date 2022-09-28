@@ -1,0 +1,16 @@
+-- Exercise 11.1
+SELECT emp_id,
+   CASE 
+    WHEN title LIKE '%President' OR title = 'Loan Manager' OR title = 'Treasurer'  THEN  'Management'
+    WHEN title = 'Operation Manager' OR title LIKE '%Teller'  THEN  'Operations'
+    ELSE 'Unknown'
+   END AS title
+ FROM employee;
+ 
+-- Exercise 11.2
+SELECT
+ SUM(CASE WHEN open_branch_id = 1 THEN 1 ELSE 0 END) AS Branch_1,
+ SUM(CASE WHEN open_branch_id = 2 THEN 1 ELSE 0 END) AS Branch_2,
+ SUM(CASE WHEN open_branch_id = 3 THEN 1 ELSE 0 END) AS Branch_3,
+ SUM(CASE WHEN open_branch_id = 4 THEN 1 ELSE 0 END) AS Branch_4
+FROM account;
