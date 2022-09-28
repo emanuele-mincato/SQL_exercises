@@ -1,0 +1,17 @@
+-- Exercise 8.1
+SELECT COUNT(*) AS number_of_rows FROM account;
+
+-- Exercise 8.2
+SELECT cust_id, COUNT(*) AS number_of_accounts FROM account
+GROUP BY cust_id;
+
+-- Exercise 8.3
+SELECT cust_id, COUNT(*) AS number_of_accounts FROM account
+GROUP BY cust_id
+HAVING COUNT(*) >= 2;
+
+-- Exercise 8.4
+SELECT product_cd, open_branch_id, SUM(avail_balance) AS available_balance FROM account 
+GROUP BY product_cd, open_branch_id
+HAVING COUNT(*) > 1
+ORDER BY available_balance DESC;
