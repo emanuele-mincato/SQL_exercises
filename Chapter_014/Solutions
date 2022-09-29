@@ -1,0 +1,14 @@
+-- Exercise 14.1
+CREATE VIEW if not exists employee_vm (supervisor_name, employee_name) AS
+SELECT concat(spv.fname, ' ', spv.lname), concat(emp.fname, ' ', emp.lname) 
+FROM employee AS emp LEFT OUTER JOIN employee AS spv ON emp.superior_emp_id = spv.emp_id;
+
+SELECT * FROM employee_vm;
+
+-- Exercise 14.2
+CREATE VIEW branch_vw (branch_name, branch_city, branch_tot_balance) AS
+SELECT b.name, b.city, SUM(a.avail_balance) FROM branch AS b
+INNER JOIN account AS a ON b.branch_id = a.open_branch_id
+GROUP BY b.branch_id;
+
+SELECT * FROM branch_vw;
