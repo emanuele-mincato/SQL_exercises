@@ -1,0 +1,7 @@
+-- Exercise 13.1
+ALTER TABLE account
+ADD CONSTRAINT account_unique_prod UNIQUE (cust_id, product_cd);
+
+-- Exercise 13.2
+CREATE INDEX txn_unique
+ON transaction (txn_date, amount);
