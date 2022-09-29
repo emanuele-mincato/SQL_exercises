@@ -1,0 +1,3 @@
+-- Exercise 15.1
+SELECT DISTINCT table_name, index_name FROM information_schema.statistics
+WHERE table_schema = 'oreilly_exercise'; -- Name of the database
